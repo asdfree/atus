@@ -1,7 +1,5 @@
 if ( .Platform$OS.type == 'windows' ) memory.limit( 256000 )
 
-library(lodown)
-lodown( "atus" , output_dir = file.path( getwd() ) )
 this_sample_break <- Sys.getenv( "this_sample_break" )
 atus_cat <- get_catalog( "atus" , output_dir = file.path( getwd() ) )
 record_categories <- ceiling( seq( nrow( atus_cat ) ) / ceiling( nrow( atus_cat ) / 5 ) )
@@ -17,7 +15,7 @@ atus_cat <-
 # 2015 only
 atus_cat <- subset( atus_cat , directory == 2015 )
 # download the microdata to your local computer
-lodown( "atus" , atus_cat )
+
 
 options( survey.replicates.mse = TRUE )
 library(survey)
