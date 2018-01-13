@@ -11,7 +11,7 @@ install:
   ps: Bootstrap
 
 cache:
-  # - C:\RLibrary
+  - C:\RLibrary
 
 # Adapt as necessary starting from here
 
@@ -33,3 +33,18 @@ environment:
     - this_sample_break: 3
     - this_sample_break: 4
     - this_sample_break: 5
+
+
+
+artifacts:
+  - path: '*.Rcheck\**\*.log'
+    name: Logs
+
+  - path: '*.Rcheck\**\*.out'
+    name: Logs
+
+  - path: '*.Rcheck\**\*.fail'
+    name: Logs
+
+  - path: '*.Rcheck\**\*.Rout'
+    name: Logs
