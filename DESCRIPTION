@@ -4,7 +4,7 @@ Title: atus
 Version: 0.1.0
 Author: Anthony Joseph Damico
 Maintainer: Anthony Joseph Damico <ajdamico@gmail.com>
-Description: A continuous integration package, tested on ajdamico/asdfree commit 7ce6ad0281dac2ae62a3edd368b18b78f25aee11 ajdamico/lodown commit 46e436d64a5934789d57734f6bbf246737f0c593
+Description: A continuous integration package, tested on ajdamico/asdfree commit 7ce6ad0281dac2ae62a3edd368b18b78f25aee11 ajdamico/lodown commit 463f7e4ba93d8fe9b40af227f3f110aea4d25486
 License: GPL-3
 Imports: survey, lodown, srvyr
 Encoding: UTF-8
