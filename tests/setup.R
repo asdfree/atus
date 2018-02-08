@@ -7,17 +7,17 @@ this_sample_break <- Sys.getenv( "this_sample_break" )
 atus_cat <- get_catalog( "atus" , output_dir = file.path( getwd() ) )
 record_categories <- ceiling( seq( nrow( atus_cat ) ) / ceiling( nrow( atus_cat ) / 5 ) )
 atus_cat <- atus_cat[ record_categories == this_sample_break , ]
-lodown( "atus" , atus_cat )
+atus_cat <- lodown( "atus" , atus_cat )
 if( any( atus_cat$directory == 2015 ) ){
-library(lodown)
-# examine all available ATUS microdata files
-atus_cat <-
-	get_catalog( "atus" ,
-		output_dir = file.path( getwd() ) )
 
-# 2015 only
-atus_cat <- subset( atus_cat , directory == 2015 )
-# download the microdata to your local computer
+
+
+
+
+
+
+
+
 
 
 options( survey.replicates.mse = TRUE )
