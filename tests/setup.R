@@ -20,7 +20,6 @@ if( any( atus_cat$directory == 2015 ) ){
 
 
 
-options( survey.replicates.mse = TRUE )
 library(survey)
 
 atusact <- readRDS( file.path( getwd() , "2015/atusact.rds" ) )
@@ -110,6 +109,7 @@ atus_design <-
 		repweights = "finlwgt[1-9]" , 
 		type = "Fay" , 
 		rho = ( 1 - 1 / sqrt( 4 ) ) ,
+		mse = TRUE ,
 		data = z
 	)
 
