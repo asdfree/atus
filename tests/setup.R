@@ -1,6 +1,6 @@
-#
-#
-#
+# don't judge me bruno
+# ate one hour, slept the rest
+# it's my lazy day
 
 atus_csv_import <-
 	function( this_url ){
