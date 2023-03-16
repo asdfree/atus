@@ -1,5 +1,5 @@
 # don't judge me bruno
-# ate one hour, slept the rest
+# eat one hour, sleep the rest
 # it's my lazy day
 
 atus_csv_import <-
