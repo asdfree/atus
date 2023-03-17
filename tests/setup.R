@@ -172,14 +172,6 @@ glm_result <-
 	)
 
 summary( glm_result )
-library(srvyr)
-atus_srvyr_design <- as_survey( atus_design )
-atus_srvyr_design %>%
-	summarize( mean = survey_mean( tuactdur24_1 ) )
-
-atus_srvyr_design %>%
-	group_by( age_category ) %>%
-	summarize( mean = survey_mean( tuactdur24_1 ) )
 hours_per_day_civilian_population <- svymean( ~ tuactdur24_3 , atus_design )
 
 stopifnot( round( coef( hours_per_day_civilian_population ) , 2 ) == 0.47 )
@@ -255,3 +247,11 @@ result <- svymean( ~ tuactdur24_hour , atus07_design )
 
 stopifnot( round( coef( result ) , 2 ) == 2.62 )
 stopifnot( round( SE( result ) , 4 ) == 0.0293 )
+library(srvyr)
+atus_srvyr_design <- as_survey( atus_design )
+atus_srvyr_design %>%
+	summarize( mean = survey_mean( tuactdur24_1 ) )
+
+atus_srvyr_design %>%
+	group_by( age_category ) %>%
+	summarize( mean = survey_mean( tuactdur24_1 ) )
