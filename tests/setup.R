@@ -1,14 +1,16 @@
 # don't judge me bruno
 # eat one hour, sleep the rest
 # it's my lazy day
-library(RCurl)
+library(httr)
 
 atus_csv_import <-
 	function( this_url ){
 		
 		this_tf <- tempfile()
 		
-		writeBin( getBinaryURL( this_url ) , this_tf )
+		this_dl <- GET( this_url , user_agent( "email@address.com") )
+		
+		writeBin( content( this_dl ) , this_tf )
 
 		unzipped_files <- unzip( this_tf , exdir = tempdir() )
 		
