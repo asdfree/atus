@@ -25,13 +25,13 @@ atus_csv_import <-
 		this_df
 	}
 
-act_df <- atus_csv_import( "https://www.bls.gov/tus/datafiles/atusact-2021.zip" )
+act_df <- atus_csv_import( "https://www.bls.gov/tus/datafiles/atusact-2023.zip" )
 
-resp_df <- atus_csv_import( "https://www.bls.gov/tus/datafiles/atusresp-2021.zip" )
+resp_df <- atus_csv_import( "https://www.bls.gov/tus/datafiles/atusresp-2023.zip" )
 
-rost_df <- atus_csv_import( "https://www.bls.gov/tus/datafiles/atusrost-2021.zip" )
+rost_df <- atus_csv_import( "https://www.bls.gov/tus/datafiles/atusrost-2023.zip" )
 
-wgts_df <- atus_csv_import( "https://www.bls.gov/tus/datafiles/atuswgts-2021.zip" )
+wgts_df <- atus_csv_import( "https://www.bls.gov/tus/datafiles/atuswgts-2023.zip" )
 act_df <- act_df[ c( 'tucaseid' , 'tutier1code' , 'tutier2code' , 'tuactdur24' ) ]
 
 resp_df <- resp_df[ c( 'tucaseid' , 'tufinlwgt' , 'tulineno' ) ]
@@ -83,7 +83,7 @@ atus_design <-
 	)
 
 # caring for and helping household members is top level 03 from the lexicon
-# https://www.bls.gov/tus/lexicons/lexiconnoex2021.pdf
+# https://www.bls.gov/tus/lexicons/lexiconwex2023.pdf
 
 atus_design <-
 	update(
@@ -177,15 +177,15 @@ glm_result <-
 summary( glm_result )
 hours_per_day_civilian_population <- svymean( ~ tuactdur24_3 , atus_design )
 
-stopifnot( round( coef( hours_per_day_civilian_population ) , 2 ) == 0.47 )
+stopifnot( round( coef( hours_per_day_civilian_population ) , 2 ) == 0.5 )
 
 percent_engaged_per_day <- svymean( ~ any_care , atus_design )
 
-stopifnot( round( coef( percent_engaged_per_day ) , 3 ) == 0.217 )
+stopifnot( round( coef( percent_engaged_per_day ) , 3 ) == 0.22 )
 
 hours_per_day_among_engaged <- svymean( ~ tuactdur24_3 , subset( atus_design , any_care ) )
 
-stopifnot( round( coef( hours_per_day_among_engaged ) , 2 ) == 2.17 )
+stopifnot( round( coef( hours_per_day_among_engaged ) , 2 ) == 2.29 )
 actsum07_df <- atus_csv_import( "https://www.bls.gov/tus/datafiles/atussum_2007.zip" )
 resp07_df <- atus_csv_import( "https://www.bls.gov/tus/datafiles/atusresp_2007.zip" )
 act07_df <- atus_csv_import( "https://www.bls.gov/tus/datafiles/atusact_2007.zip" )
