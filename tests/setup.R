@@ -24,7 +24,6 @@ atus_csv_import <-
 		
 		this_df
 	}
-
 act_df <- atus_csv_import( "https://www.bls.gov/tus/datafiles/atusact-2023.zip" )
 
 resp_df <- atus_csv_import( "https://www.bls.gov/tus/datafiles/atusresp-2023.zip" )
